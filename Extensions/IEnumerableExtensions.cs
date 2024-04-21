@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Asjc.Extensions
@@ -10,6 +11,17 @@ namespace Asjc.Extensions
             if (first.Count() != second.Count())
                 return false;
             return first.OrderBy(x => x).SequenceEqual(second.OrderBy(x => x));
+        }
+
+        public static bool HasDuplicates<T>(this IEnumerable<T> source)
+        {
+            var set = new HashSet<T>();
+            foreach (T item in source)
+            {
+                if (!set.Add(item))
+                    return true;
+            }
+            return false;
         }
     }
 }

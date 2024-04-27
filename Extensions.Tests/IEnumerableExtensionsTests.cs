@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Asjc.Extensions;
-
-namespace Asjc.Extensions.Tests
+﻿namespace Asjc.Extensions.Tests
 {
     [TestClass]
     public class IEnumerableExtensionsTests

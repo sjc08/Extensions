@@ -4,7 +4,7 @@ namespace Asjc.Extensions
 {
     public static class ObjectExtensions
     {
-#if NET8_0
+#if NETCOREAPP3_0_OR_GREATER
 #nullable enable
         public static object? ChangeType(this object? value, Type type)
 #else

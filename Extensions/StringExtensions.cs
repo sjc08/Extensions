@@ -13,6 +13,21 @@ namespace Asjc.Extensions
         }
 #endif
 
+        public static bool Contains(this string str, string value, bool ignoreCase)
+        {
+            return str.Contains(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
+        }
+
+#if NETCOREAPP3_0_OR_GREATER
+#nullable enable
+        public static bool Equals(this string str, string? value, bool ignoreCase)
+#else
+        public static bool Equals(this string str, string value, bool ignoreCase)
+#endif
+        {
+            return str.Equals(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
+        }
+
 #if NETCOREAPP3_0_OR_GREATER
 #nullable enable
         public static string Replace(this string str, string oldValue, string? newValue, bool ignoreCase)

@@ -5,8 +5,7 @@ namespace Asjc.Extensions
 {
     public static class StringExtensions
     {
-#if NETCOREAPP2_1_OR_GREATER
-#else
+#if NETSTANDARD2_0
         public static bool Contains(this string str, string value, StringComparison comparisonType)
         {
             return str.IndexOf(value, comparisonType) >= 0;
@@ -18,31 +17,28 @@ namespace Asjc.Extensions
             return str.Contains(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETCOREAPP3_0_OR_GREATER
-#nullable enable
-        public static bool Equals(this string str, string? value, bool ignoreCase)
-#else
+#if NETSTANDARD2_0
         public static bool Equals(this string str, string value, bool ignoreCase)
+#else
+        public static bool Equals(this string str, string? value, bool ignoreCase)
 #endif
         {
             return str.Equals(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETCOREAPP3_0_OR_GREATER
-#nullable enable
-        public static string Replace(this string str, string oldValue, string? newValue, bool ignoreCase)
-#else
+#if NETSTANDARD2_0
         public static string Replace(this string str, string oldValue, string newValue, bool ignoreCase)
+#else
+        public static string Replace(this string str, string oldValue, string? newValue, bool ignoreCase)
 #endif
         {
             return str.Replace(oldValue, newValue, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETCOREAPP2_0_OR_GREATER
-#else
+#if NETSTANDARD2_0
         public static string Replace(this string str, string oldValue, string newValue, StringComparison comparisonType)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             int previousIndex = 0;
             int index = str.IndexOf(oldValue, comparisonType);

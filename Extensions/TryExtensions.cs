@@ -17,12 +17,7 @@ namespace Asjc.Extensions
             }
         }
 
-#if NETCOREAPP3_0_OR_GREATER
-#nullable enable
         public static T? Try<T>(Func<T> func)
-#else
-        public static T Try<T>(Func<T> func)
-#endif
         {
             try
             {
@@ -34,11 +29,7 @@ namespace Asjc.Extensions
             }
         }
 
-#if NETCOREAPP3_0_OR_GREATER
         public static bool Try<T>(Func<T> func, out T? result)
-#else
-        public static bool Try<T>(Func<T> func, out T result)
-#endif
         {
             try
             {

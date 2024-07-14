@@ -5,7 +5,7 @@ namespace Asjc.Extensions
 {
     public static class StringExtensions
     {
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || NET472
         public static bool Contains(this string str, string value, StringComparison comparisonType)
         {
             return str.IndexOf(value, comparisonType) >= 0;
@@ -17,26 +17,18 @@ namespace Asjc.Extensions
             return str.Contains(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETSTANDARD2_0
-        public static bool Equals(this string str, string value, bool ignoreCase)
-#else
         public static bool Equals(this string str, string? value, bool ignoreCase)
-#endif
         {
             return str.Equals(value, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETSTANDARD2_0
-        public static string Replace(this string str, string oldValue, string newValue, bool ignoreCase)
-#else
         public static string Replace(this string str, string oldValue, string? newValue, bool ignoreCase)
-#endif
         {
             return str.Replace(oldValue, newValue, ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture);
         }
 
-#if NETSTANDARD2_0
-        public static string Replace(this string str, string oldValue, string newValue, StringComparison comparisonType)
+#if NETSTANDARD2_0 || NET472
+        public static string Replace(this string str, string oldValue, string? newValue, StringComparison comparisonType)
         {
             StringBuilder sb = new();
 

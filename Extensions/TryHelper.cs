@@ -2,7 +2,7 @@
 
 namespace Asjc.Extensions
 {
-    public static class TryExtensions
+    public static class TryHelper
     {
         public static bool Try(Action action)
         {

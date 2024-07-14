@@ -6,14 +6,13 @@
         [TestMethod]
         public void ConvertToTest1()
         {
-            Assert.IsTrue("1".ConvertTo(typeof(int), out var result));
-            Assert.AreEqual(result, 1);
+            Assert.AreEqual("1".ChangeType(typeof(int)), 1);
         }
 
         [TestMethod]
         public void ConvertToTest2()
         {
-            Assert.IsFalse("A".ConvertTo(typeof(int), out var result));
+            Assert.IsFalse("A".TryChangeType(typeof(int), out var result));
             Assert.AreEqual(result, null);
         }
 
@@ -21,7 +20,7 @@
         public void ConvertToTest3()
         {
             object? obj = null;
-            Assert.IsFalse(obj.ConvertTo(typeof(int), out var result));
+            Assert.IsFalse(obj.TryChangeType(typeof(int), out var result));
             Assert.AreEqual(result, null);
         }
 
@@ -29,7 +28,7 @@
         public void ConvertToTest4()
         {
             object? obj = null;
-            Assert.IsTrue(obj.ConvertTo(typeof(string), out var result));
+            Assert.IsTrue(obj.TryChangeType(typeof(string), out var result));
             Assert.AreEqual(result, null);
         }
     }

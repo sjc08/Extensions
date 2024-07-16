@@ -1,5 +1,4 @@
-﻿using System;
-using static Asjc.Extensions.TryHelper;
+﻿using static Asjc.Extensions.TryHelper;
 
 namespace Asjc.Extensions
 {

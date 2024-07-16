@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Asjc.Extensions
 {
@@ -29,7 +29,11 @@ namespace Asjc.Extensions
             }
         }
 
+#if NETSTANDARD2_1 || NET8_0
+        public static bool Try<T>(Func<T> func, [MaybeNullWhen(false)] out T result)
+#else
         public static bool Try<T>(Func<T> func, out T? result)
+#endif
         {
             try
             {

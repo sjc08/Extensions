@@ -2,6 +2,9 @@
 
 namespace Asjc.Extensions
 {
+    /// <summary>
+    /// Contains helper methods for trying to execute.
+    /// </summary>
     public static class TryHelper
     {
         public static bool Try(Action action)

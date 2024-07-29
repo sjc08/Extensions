@@ -6,8 +6,8 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.2.3</Version>
-    <Description>Some common extension methods</Description>
+    <Version>1.2.4</Version>
+    <Description>Some extended static classes.</Description>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/SJC08/Extensions</RepositoryUrl>

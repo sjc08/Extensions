@@ -4,5 +4,5 @@
 
 Provides some extended, simple but useful **static classes** (mostly for extension methods).
 
-This package is constantly updated with new content!
+**Warning: Due to design issues, updates to this package will be suspended. Consider using [Asjc.Utils](https://github.com/SJC08/Utils), which fully inherits the functionality of this package and is easy to migrate to**
 
